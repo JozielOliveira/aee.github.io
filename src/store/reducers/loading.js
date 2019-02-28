@@ -7,7 +7,7 @@ const INITIAL_STATE = fromJS({
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'loading_global':
-            return state.withMutations( mutableState => mutableState.set('active', !mutableState.get('active')))
+            return state.withMutations( mutableState => mutableState.set('active', action.payload))
         default :
             return state
     }

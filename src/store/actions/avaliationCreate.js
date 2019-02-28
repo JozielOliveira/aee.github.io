@@ -50,11 +50,11 @@ export const updateAvaliation = (id, title, description, questions, score, targe
     }
     const { error } = await service.updateItem(avaliation, dispatch)
     if (error) {
+        dispatch(alertError(error))
+        return false
+    } else {
         dispatch(alertSuccess('Avaliação atualizada com sucesso'))
         dispatch({ type : RESET_FORM })
         return true
-    } else {
-        dispatch(alertError(error))
-        return false
     }
 }

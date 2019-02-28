@@ -1,1 +1,1 @@
-export const loadingC = () => ({type : 'loading_global'})
+export const loadingC = payload => ({type : 'loading_global', payload})
