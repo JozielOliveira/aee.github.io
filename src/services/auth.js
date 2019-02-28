@@ -1,19 +1,20 @@
-import { api } from './api';
+import { api } from './api'
+import { request } from './requestLoading'
 
-const register = async ( username, email, password ) =>  
-  await api.post('/auth/local/register', { username, email, password })
+const register = async ( username, email, password, dispatch ) =>  
+  await request(api.post('/auth/local/register', { username, email, password }), dispatch)
 
-const login =  async ( identifier, password ) => 
-  await api.post('/auth/local', { identifier, password })
+const login =  async ( identifier, password, dispatch ) =>  
+  await request(api.post('/auth/local', { identifier, password }), dispatch)
 
-const forgotte_password = async email => 
-  await api.post('/auth/forgot-password', {
+const forgotte_password = async (email, dispatch) => 
+  await request(api.post('/auth/forgot-password', {
     email,
-    url: `http://localhost:3000/auth/reset-password`
-  })
+    url: `https://aee-js.firebaseapp.com/auth/reset-password`
+  }), dispatch)
 
-export const reset_password = async ( code, password, passwordConfirmation ) => 
-  await api.post('/auth/reset-password', { code, password, passwordConfirmation })
+export const reset_password = async ( code, password, passwordConfirmation, dispatch ) => 
+  await request(api.post('/auth/reset-password', { code, password, passwordConfirmation }), dispatch)
 
 export default {
   register,

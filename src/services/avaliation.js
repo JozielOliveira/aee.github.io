@@ -1,5 +1,5 @@
-import { api, apiGraphQL } from './api';
-
+import { api, apiGraphQL } from './api'
+import { request } from './requestLoading'
 const ITEM =  id => `
     query {
         avaliation (id: "${id}") {
@@ -21,15 +21,15 @@ const LIST = `
         }
     }
 ` 
-const create = async form =>  await api.post('/avaliations', form)
+const create = async (form, dispatch) =>  await request(api.post('/avaliations', form), dispatch)
 
-const getAll = async () => await apiGraphQL.post('', { query: LIST })
+const getAll = async (dispatch) => await request(apiGraphQL.post('', { query: LIST }), dispatch)
 
-const getItem = async id => apiGraphQL.post('', { query : ITEM(id) })
+const getItem = async (id, dispatch) => await request(apiGraphQL.post('', { query : ITEM(id) }), dispatch)
 
-const updateItem = async item => await api.put(`/avaliations/${item.id}`, item) ;
+const updateItem = async (item, dispatch) => await request(api.put(`/avaliations/${item.id}`, item), dispatch)
 
-const deleteItem = async id => api.delete(`/avaliations/${id}`);
+const deleteItem = async (id, dispatch) => request(api.delete(`/avaliations/${id}`), dispatch)
 
 export default {
     create,

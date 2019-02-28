@@ -1,4 +1,5 @@
-import { api, apiGraphQL } from './api';
+import { api, apiGraphQL } from './api'
+import { request } from './requestLoading'
 
 const ITEM_CID =  id => `
     query {
@@ -21,15 +22,15 @@ const LIST_CID = `
         }
     }
 `
-const create = async form =>  await api.post('/cids', form)
+const create = async (form, dispatch) =>  await request(api.post('/cids', form), dispatch)
 
-const getAll = async () => await apiGraphQL.post('', { query: LIST_CID })
+const getAll = async (dispatch) => await request(apiGraphQL.post('', { query: LIST_CID }), dispatch)
 
-const getItem = async id => apiGraphQL.post('', { query : ITEM_CID(id) })
+const getItem = async (id, dispatch) => await request(apiGraphQL.post('', { query : ITEM_CID(id) }), dispatch)
 
-const updateItem = async item => await api.put(`/cids/${item.id}`, item) ;
+const updateItem = async (item, dispatch) => await request(api.put(`/cids/${item.id}`, item), dispatch)
 
-const deleteItem = async id => api.delete(`/cids/${id}`)
+const deleteItem = async (id, dispatch) => await request(api.delete(`/cids/${id}`), dispatch)
 
 export default {
     create,

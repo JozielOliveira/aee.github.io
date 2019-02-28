@@ -1,9 +1,4 @@
 export const styles = theme => ({
-    '@global': {
-      body: {
-        backgroundColor: theme.palette.common.white,
-      },
-    },
     appBar: {
       position: 'relative',
     },

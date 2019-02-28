@@ -6,11 +6,10 @@ import { theme } from './styles';
 import Loading from './components/Loading';
 import PrivateRoute from "./components/PrivateRoute";
 import Alert from './containers/Alert/SnackerBar';
+import LoadingGlobal from "./containers/Loading/Loading";
 // Redux
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { reducers } from './store/reducers'; 
-import thunk from 'redux-thunk';
+import { store } from './store/reducers';
 // Pages
 const Login = lazy(() => import('./pages/Authentication/index'));
 const Main = lazy(() => import('./pages/Main.jsx'));
@@ -21,7 +20,8 @@ class App extends PureComponent {
       /** Configurations colors theme */
       <MuiThemeProvider theme={theme}>
         {/** reducers with thunck */}
-        <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+        <Provider store={store}>
+            <LoadingGlobal />
             <BrowserRouter>
               <Suspense fallback={<Loading />}>
                 <Switch>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { CircularProgress } from '@material-ui/core';
 
 export default class Loading extends PureComponent {
   render() {
@@ -15,6 +15,8 @@ const styles = {
         position:'fixed',
         width: '100%',
         height:'100%',
+        zIndex: 1,
+        background: '#fafafaa3',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent:'center'

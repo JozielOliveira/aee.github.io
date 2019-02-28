@@ -10,7 +10,6 @@
     "axios": "^0.18.0",
     "date-fns": "2.0.0-alpha.21",
     "downshift": "^3.1.12",
-    "gh-pages": "^2.0.1",
     "immutable": "^4.0.0-rc.12",
     "material-ui-next-pickers": "0.0.16",
     "material-ui-pickers": "^2.1.1",
@@ -29,9 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

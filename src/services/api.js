@@ -3,6 +3,7 @@ import axios from 'axios';
 const baseURL = 'https://aee-piloto.herokuapp.com';
 
 export const api = axios.create({ baseURL });
+
 export const api_auth = axios.create({ 
     baseURL, 
     headers: {

@@ -12,8 +12,7 @@ export const styles = theme => ({
       },
       root: {
         width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
+        maxWidth: 360
       },
       nested: {
         paddingLeft: theme.spacing.unit * 4,
