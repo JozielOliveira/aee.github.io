@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import List from '@material-ui/core/List';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, List, Fab } from '@material-ui/core';
 import AvaliationCard from '../../../components/Card/CidCard';
-import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
 import { connect } from'react-redux';
 import { bindActionCreators } from 'redux';
 import { getListCID, getCID } from "../../../store/actions/cid";
+import NotFound from '../../../components/NotFound/notFound';
 import { styles } from './styles';
 
 class CID extends Component {
@@ -25,6 +24,7 @@ class CID extends Component {
     const { classes, listCID } = this.props;
     return (
         <div className={classNames(classes.layout, classes.cardGrid)}>
+          {NotFound({active : listCID.length, text : 'Não há CIDs cadastrado'})}
           {/* List avaliations */}
           <List
              className={classes.root}

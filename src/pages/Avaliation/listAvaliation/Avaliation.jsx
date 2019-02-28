@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import List from '@material-ui/core/List';
 import { withStyles } from '@material-ui/core/styles';
 import AvaliationCard from '../../../components/Card/AvaliationCard';
+import NotFound from '../../../components/NotFound/notFound';
 import { styles } from './styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -30,6 +31,7 @@ class Avaliation extends Component {
     const { classes, list } = this.props;
     return (
         <div className={classNames(classes.layout, classes.cardGrid)}>
+          {NotFound({active : list.length, text : 'Não há avaliações cadastrada'})}
           {/* List avaliations */}
           <List
              className={classes.root}
