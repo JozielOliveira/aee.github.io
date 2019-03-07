@@ -8,5 +8,5 @@ export const theme = createMuiTheme({
         main: '#2196f3',
       },
     },
-    typography: { useNextVariants: true },
+    typography: { useNextVariants: true, textPrimary:  '#4e4d4d' },
   });
