@@ -1,4 +1,9 @@
 export const styles = theme => ({
+  '@global': {
+    body: {
+      marginTop: theme.spacing.unit * 10,
+    },
+  },
     appBar: {
       position: 'relative',
     },
