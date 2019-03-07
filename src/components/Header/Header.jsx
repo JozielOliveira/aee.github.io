@@ -15,11 +15,11 @@ class Header extends PureComponent {
     const { classes, title, subTitle } = this.props;
     return ( title !== undefined && 
       <div className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color='textPrimary'>
+        <Typography variant="h3" gutterBottom align="center" color="textPrimary" >
             {title}
         </Typography>
         { subTitle &&
-            <Typography variant="h6" align="center" color="textSecondary" component="p">
+            <Typography style={{marginTop : 20}} variant="subtitle1"  gutterBottom align="center" color="textSecondary">
                 {subTitle}
             </Typography>
         }
