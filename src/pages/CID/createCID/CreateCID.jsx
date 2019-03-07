@@ -9,7 +9,7 @@ class createCID extends Component {
     const {name, description, symptoms, causes, interventions, reference} = this.props;
     const response = await this.props.save(name, description, symptoms.selectedItem, causes.selectedItem, interventions, reference);
     if (response)
-      this.props.history.push('/main/cid/', {name:'CIDs'});
+      this.props.history.goBack();
   }
 
   render() {

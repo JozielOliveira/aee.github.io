@@ -18,7 +18,7 @@ class EditCID extends Component {
         reference
     });
     if (response)
-      this.props.history.push('/main/cid/');
+      this.props.history.goBack();
   }
 
   render() {
