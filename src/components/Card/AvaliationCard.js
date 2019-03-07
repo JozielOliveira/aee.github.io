@@ -38,14 +38,14 @@ export class AvaliationCard extends PureComponent {
                       </div>
                     </div>
                     <ListItemSecondaryAction>
-                      <IconButton color='inherit' aria-label="visualizar" onClick={() => view(item)}>
-                        <Visibility />
+                      <IconButton aria-label="visualizar" onClick={() => view(item)}>
+                        <Visibility color='primary' />
                       </IconButton>
-                      <IconButton color='inherit' aria-label="editar" onClick={() => edit(item)}>
-                        <Edit />
+                      <IconButton aria-label="editar" onClick={() => edit(item)}>
+                        <Edit color='secondary' />
                       </IconButton>
-                      <IconButton color='inherit' aria-label="Delete" onClick={() => deleteItem(item)}>
-                        <Delete  />
+                      <IconButton aria-label="Delete" onClick={() => deleteItem(item)}>
+                        <Delete color='error' />
                       </IconButton>
                     </ListItemSecondaryAction>
                 </ListItem>

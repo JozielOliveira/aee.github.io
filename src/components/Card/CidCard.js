@@ -25,11 +25,11 @@ export class AvaliationCard extends PureComponent {
                       primary={<Typography variant='h6' paragraph> {item.name} </Typography>}
                     />
                     <ListItemSecondaryAction>
-                      <IconButton color='inherit' aria-label="editar" onClick={() => edit(item)} >
-                        <Edit />
+                      <IconButton aria-label="editar" onClick={() => edit(item)} >
+                        <Edit color='secondary' />
                       </IconButton>
-                      <IconButton color='inherit' aria-label="Delete" onClick={() => deleteCID(item)}>
-                        <Delete  />
+                      <IconButton aria-label="Delete" onClick={() => deleteCID(item)}>
+                        <Delete color='error' />
                       </IconButton>
                     </ListItemSecondaryAction>
                 </ListItem>
