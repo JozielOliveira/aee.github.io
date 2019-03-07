@@ -3,11 +3,12 @@ import React, { PureComponent, lazy, Suspense, Fragment } from 'react';
 import { withStyles, CssBaseline } from '@material-ui/core';
 // Components
 import Menu from '../containers/Menu/Menu.jsx';
-import Footer from '../components/Footer/Footer';
+// import Footer from '../components/Footer/Footer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Header from '../components/Header/Header';
 import { styles } from './styles';
+import 'typeface-roboto';
 // Pages
 const Student = lazy(() => import('./Student/listStudent/Student.jsx'));
 const Avaliation = lazy(() => import ('./Avaliation/listAvaliation/Avaliation.jsx'));
@@ -19,7 +20,6 @@ const Schedule = lazy(() => import('./Schedule/Schedule.jsx'));
 const CID = lazy(() => import('./CID/listCID/CID'));
 const CreateCID = lazy(() => import('./CID/createCID/CreateCID'));
 const EditCID = lazy(() => import('./CID/editCID/EditCID'));
-
 class Main extends PureComponent {
   render() {
     const { classes, location } = this.props;
@@ -28,8 +28,8 @@ class Main extends PureComponent {
             <CssBaseline />
             <Menu />
             <main className={classes.layout}>
-                { location.state && 
-                    <Header title={location.state.name} /> 
+                { location.state &&
+                    <Header title={location.state.name} subTitle={location.state.description}/> 
                 }
                 <Suspense fallback={<Loading />}>
                     <Switch>
@@ -47,7 +47,6 @@ class Main extends PureComponent {
                     </Switch>
                 </Suspense>
             </main>
-            <Footer />
         </Fragment>
     );
   }
