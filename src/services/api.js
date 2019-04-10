@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//const baseURL = 'https://localhost:1337';
 const baseURL = 'https://aee-piloto.herokuapp.com';
 
 export const api = axios.create({ baseURL });
