@@ -27,7 +27,6 @@ export const singup = ( username, email, password ) => async dispatch => {
     if (error){
         dispatch(alertError(error))
     } else {
-        console.log("Passou")
         localStorage.setItem('jwt', data.jwt)
         localStorage.setItem('user', data.user.id)
         localStorage.setItem('name', data.user.username)
